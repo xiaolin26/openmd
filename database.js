@@ -52,6 +52,22 @@ function createTables() {
         )
       `, (err) => {
         if (err) reject(err);
+      });
+
+      // 分享链接表
+      db.run(`
+        CREATE TABLE IF NOT EXISTS shares (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          note_id INTEGER NOT NULL,
+          share_code TEXT UNIQUE NOT NULL,
+          password TEXT,
+          expires_at DATETIME,
+          views INTEGER DEFAULT 0,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          FOREIGN KEY (note_id) REFERENCES notes(id) ON DELETE CASCADE
+        )
+      `, (err) => {
+        if (err) reject(err);
         else resolve();
       });
     });
