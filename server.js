@@ -173,12 +173,13 @@ app.get('/note/:id', async (req, res) => {
       font-family: 'Courier New', monospace;
     }
     .markdown pre {
-      background: #2d2d2d;
-      color: #f8f8f2;
+      background: #f0f4f8;
+      color: #2c3e50;
       padding: 15px;
       border-radius: 5px;
       overflow-x: auto;
       margin-bottom: 20px;
+      border: 1px solid #e0e6ed;
     }
     .markdown pre code {
       background: none;
@@ -371,14 +372,15 @@ app.get('/', (req, res) => {
       font-size: 0.9em;
     }
     pre {
-      background: #1e1e1e;
-      color: #d4d4d4;
+      background: #f0f4f8;
+      color: #2c3e50;
       padding: 20px;
       border-radius: 8px;
       overflow-x: auto;
       margin: 15px 0;
       font-size: 0.9em;
       line-height: 1.5;
+      border: 1px solid #e0e6ed;
     }
     .notes-list {
       display: grid;
