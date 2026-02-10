@@ -19,14 +19,14 @@ npm install
 npm start
 ```
 
-服务器将在 `http://localhost:3000` 运行
+服务器将在 `http://localhost:80` 运行（或 3000 端口，取决于配置）
 
 ## API文档
 
 ### 创建笔记
 
 ```bash
-curl -X POST http://localhost:3000/api/notes \
+curl -X POST https://md.yuanze.com/api/notes \
   -H "Content-Type: application/json" \
   -d '{
     "title": "我的笔记",
@@ -42,7 +42,7 @@ curl -X POST http://localhost:3000/api/notes \
 ```json
 {
   "id": "xyz123",
-  "url": "http://localhost:3000/note/xyz123",
+  "url": "https://md.yuanze.com/note/xyz123",
   "title": "我的笔记",
   "content": "# Hello\n\n这是我的笔记内容",
   "createdAt": "2026-02-10T04:30:00.000Z",
@@ -53,13 +53,13 @@ curl -X POST http://localhost:3000/api/notes \
 ### 获取笔记
 
 ```bash
-curl http://localhost:3000/api/notes/:id
+curl https://md.yuanze.com/api/notes/:id
 ```
 
 ### 更新笔记
 
 ```bash
-curl -X PUT http://localhost:3000/api/notes/:id \
+curl -X PUT https://md.yuanze.com/api/notes/:id \
   -H "Content-Type: application/json" \
   -d '{
     "content": "# Updated Content\n\n新的内容"
@@ -69,7 +69,7 @@ curl -X PUT http://localhost:3000/api/notes/:id \
 ### 列出所有笔记
 
 ```bash
-curl http://localhost:3000/api/notes
+curl https://md.yuanze.com/api/notes
 ```
 
 ## 人类访问
@@ -77,7 +77,7 @@ curl http://localhost:3000/api/notes
 笔记创建后，人类可以通过以下URL查看：
 
 ```
-http://localhost:3000/note/:id
+https://md.yuanze.com/note/:id
 ```
 
 该页面提供了只读访问，展示了渲染后的Markdown内容。
