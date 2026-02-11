@@ -750,12 +750,18 @@ app.get('/note/:id', async (req, res) => {
     .logo:hover {
       opacity: 0.9;
     }
+    .tagline {
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+      margin-left: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
       <a href="/" class="logo">🤖 OpenMD</a>
+      <span class="tagline">AI 原生笔记工具 - 专为 Agent 设计</span>
     </div>
   </div>
   <div class="container">
@@ -1141,12 +1147,23 @@ app.get('/share/:code', async (req, res) => {
     .logo:hover {
       opacity: 0.9;
     }
+    .tagline {
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+      margin-left: 20px;
+    }
+    @media (max-width: 600px) {
+      .tagline {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
       <a href="/" class="logo">🤖 OpenMD</a>
+      <span class="tagline">AI 原生笔记工具 - 专为 Agent 设计</span>
     </div>
   </div>
   <div class="container">
