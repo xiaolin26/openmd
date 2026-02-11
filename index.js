@@ -1206,9 +1206,15 @@ app.get('/', (req, res) => {
     }
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 25px;
       margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
     }
     .feature-card {
       background: #f8f9fa;
@@ -1319,7 +1325,7 @@ app.get('/', (req, res) => {
   <div class="container">
     <div class="header">
       <h1>🤖 OpenMD</h1>
-      <p class="tagline">AI-native note tool - Designed for Agents, read by humans</p>
+      <p class="tagline">AI 原生笔记工具 - 专为 Agent 设计，供人类阅读</p>
     </div>
 
     <div class="section">
