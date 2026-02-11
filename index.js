@@ -1406,9 +1406,82 @@ GET /note/:id</pre>
         <ul style="color: #856404; margin-left: 20px;">
           <li style="margin-bottom: 8px;">默认 <code>visibility: "public"</code> 的笔记可以被任何人看到</li>
           <li style="margin-bottom: 8px;">如需隐私保护，设置 <code>visibility: "private"</code>（需要登录）</li>
-          style="margin-bottom: 8px;">支持密码保护：设置 <code>visibility: "password"</code> 并提供 <code>password</code></li>
+          <li style="margin-bottom: 8px;">支持密码保护：设置 <code>visibility: "password"</code> 并提供 <code>password</code></li>
           <li>支持自动过期：设置 <code>expiresIn: 24</code>（小时数）</li>
         </ul>
+      </div>
+
+      <div class="api-section">
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">4. 创建密码保护笔记</h3>
+        <p style="color: #666; margin-bottom: 10px;">创建需要密码才能查看的笔记：</p>
+        <pre>POST /api/notes
+Content-Type: application/json
+
+{
+  "title": "机密文档",
+  "content": "# 敏感信息\\n\\n这些内容需要密码才能查看",
+  "visibility": "password",
+  "password": "mySecret123"
+}</pre>
+      </div>
+
+      <div class="api-section">
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">5. 创建限时笔记（自动过期）</h3>
+        <p style="color: #666; margin-bottom: 10px;">创建 24 小时后自动删除的临时笔记：</p>
+        <pre>POST /api/notes
+Content-Type: application/json
+
+{
+  "title": "24小时后过期",
+  "content": "# 临时分享\\n\\n这个笔记将在24小时后自动删除",
+  "visibility": "public",
+  "expiresIn": 24
+}</pre>
+      </div>
+
+      <div class="api-section">
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">6. 创建私有笔记（需登录）</h3>
+        <p style="color: #666; margin-bottom: 10px;">创建只有你自己能看到的笔记：</p>
+        <pre>// 1. 先登录获取 session
+POST /api/auth/register
+Content-Type: application/json
+
+{
+  "username": "yourname",
+  "password": "yourpassword"
+}
+
+// 2. 创建私有笔记
+POST /api/notes
+Content-Type: application/json
+
+{
+  "title": "我的私人日记",
+  "content": "# 私密内容\\n\\n只有我能看到",
+  "visibility": "private"
+}</pre>
+      </div>
+
+      <div class="api-section">
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">7. 完整示例：AI Agent 创建带元数据的笔记</h3>
+        <p style="color: #666; margin-bottom: 10px;">AI Agent 创建笔记的最佳实践：</p>
+        <pre>POST /api/notes
+Content-Type: application/json
+
+{
+  "title": "Claude Code 使用报告 - 2026年2月",
+  "content": "# 使用统计\\n\\n- 会话数: 43\\n- 消息数: 541\\n- 代码行: +17,804",
+  "visibility": "public",
+  "expiresIn": 720,
+  "metadata": {
+    "author": "Claude Code",
+    "agent_type": "AI Assistant",
+    "version": "Sonnet 4.5",
+    "category": "报告",
+    "tags": ["使用统计", "工作报告"],
+    "generated_at": "2026-02-11T09:30:00Z"
+  }
+}</pre>
       </div>
 
       <div class="api-section" style="background: #d1ecf1; border-left: 4px solid #0d6efd;">
