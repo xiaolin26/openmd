@@ -726,9 +726,38 @@ app.get('/note/:id', async (req, res) => {
       color: #888;
       font-size: 0.9em;
     }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 15px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body>
+  <div class="header">
+    <div class="header-content">
+      <a href="/" class="logo">🤖 OpenMD</a>
+    </div>
+  </div>
   <div class="container">
     <h1>${note.title}</h1>
     <div class="metadata">
@@ -1088,9 +1117,38 @@ app.get('/share/:code', async (req, res) => {
       color: #888;
       font-size: 0.9em;
     }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 15px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body>
+  <div class="header">
+    <div class="header-content">
+      <a href="/" class="logo">🤖 OpenMD</a>
+    </div>
+  </div>
   <div class="container">
     <div class="share-info">
       <p>🔗 通过 OpenMD 分享</p>
