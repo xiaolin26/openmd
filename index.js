@@ -1467,20 +1467,6 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
-// 调试：查看环境变量
-app.get('/api/debug/env', (req, res) => {
-  res.json({
-    DB_TYPE: process.env.DB_TYPE,
-    DB_HOST: process.env.DB_HOST ? '***' : 'undefined',
-    DB_PORT: process.env.DB_PORT,
-    DB_NAME: process.env.DB_NAME,
-    DB_USER: process.env.DB_USER ? '***' : 'undefined',
-    SESSION_SECRET: process.env.SESSION_SECRET ? '***' : 'undefined',
-    NODE_ENV: process.env.NODE_ENV,
-    VERCEL: process.env.VERCEL ? 'true' : 'false'
-  });
-});
-
 // 启动服务器（仅在非 Vercel 环境）
 if (!process.env.VERCEL) {
   initDatabase().then(() => {
