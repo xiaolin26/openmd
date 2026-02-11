@@ -633,6 +633,7 @@ app.get('/note/:id', async (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>${note.title} - OpenMD</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1032,6 +1033,7 @@ app.get('/share/:code', async (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>${note.title} - OpenMD</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1243,6 +1245,7 @@ app.get('/', (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>OpenMD - AI 原生笔记工具</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
