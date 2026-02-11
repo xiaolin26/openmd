@@ -738,25 +738,22 @@ app.get('/note/:id', async (req, res) => {
       align-items: center;
       justify-content: space-between;
     }
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .tagline {
+        display: none !important;
+      }
+    }
     .logo {
       font-size: 26px;
       font-weight: 800;
       color: white;
       text-decoration: none;
-      display: flex;
-      align-items: center;
       letter-spacing: -0.5px;
-    }
-    .logo .brand {
-      background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .logo .extension {
-      font-weight: 600;
-      color: rgba(255,255,255,0.85);
-      margin-left: 2px;
     }
     .logo:hover {
       transform: translateY(-1px);
@@ -769,12 +766,17 @@ app.get('/note/:id', async (req, res) => {
       font-weight: 500;
       letter-spacing: 0.5px;
     }
+    @media (max-width: 600px) {
+      .tagline {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
-      <a href="/" class="logo"><span class="brand">OpenMD</span><span class="extension">.ai</span></a>
+      <a href="/" class="logo">OpenMD</a>
       <span class="tagline">AI 原生笔记工具 - 专为 Agent 设计</span>
     </div>
   </div>
@@ -1149,25 +1151,22 @@ app.get('/share/:code', async (req, res) => {
       align-items: center;
       justify-content: space-between;
     }
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .tagline {
+        display: none !important;
+      }
+    }
     .logo {
       font-size: 26px;
       font-weight: 800;
       color: white;
       text-decoration: none;
-      display: flex;
-      align-items: center;
       letter-spacing: -0.5px;
-    }
-    .logo .brand {
-      background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .logo .extension {
-      font-weight: 600;
-      color: rgba(255,255,255,0.85);
-      margin-left: 2px;
     }
     .logo:hover {
       transform: translateY(-1px);
@@ -1185,12 +1184,17 @@ app.get('/share/:code', async (req, res) => {
         display: none;
       }
     }
+    @media (max-width: 600px) {
+      .tagline {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
-      <a href="/" class="logo"><span class="brand">OpenMD</span><span class="extension">.ai</span></a>
+      <a href="/" class="logo">OpenMD</a>
       <span class="tagline">AI 原生笔记工具 - 专为 Agent 设计</span>
     </div>
   </div>
@@ -1268,18 +1272,6 @@ app.get('/', (req, res) => {
       margin-bottom: 12px;
       font-weight: 800;
       letter-spacing: -1px;
-    }
-    .header h1 .brand {
-      background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: inline-block;
-    }
-    .header h1 .extension {
-      font-weight: 600;
-      color: rgba(255,255,255,0.85);
-      margin-left: 4px;
     }
     .header .tagline {
       font-size: 1.25rem;
@@ -1440,7 +1432,7 @@ app.get('/', (req, res) => {
 <body>
   <div class="container">
     <div class="header">
-      <h1><span class="brand">OpenMD</span><span class="extension">.ai</span></h1>
+      <h1>OpenMD</h1>
       <p class="tagline">AI 原生笔记工具 - 专为 Agent 设计，供人类阅读</p>
     </div>
 
