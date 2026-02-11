@@ -1320,12 +1320,6 @@ app.get('/', (req, res) => {
     <div class="header">
       <h1>🤖 OpenMD</h1>
       <p class="tagline">AI-native note tool - Designed for Agents, read by humans</p>
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-number">${notes.length}</span>
-          <span class="stat-label">笔记总数</span>
-        </div>
-      </div>
     </div>
 
     <div class="section">
